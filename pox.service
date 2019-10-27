@@ -1,0 +1,15 @@
+[Unit]
+Description=POX Network Controller with UCLA CS118 packet redirector
+
+[Service]
+User=nobody
+Group=nogroup
+ExecStart=/opt/pox/pox.py --verbose ucla_cs118
+Restart=on-failure
+ProtectSystem=full
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectHome=yes
+
+[Install]
+WantedBy=multi-user.target
